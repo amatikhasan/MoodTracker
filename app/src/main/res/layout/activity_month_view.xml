@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".view.MonthView">
+
+    <include layout="@layout/toolbar_layout" />
+
+    <android.support.v4.widget.DrawerLayout
+        android:id="@+id/drawer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:textSize="16sp"
+                android:layout_marginTop="64dp"
+                android:text="Hey there! We can help you tracking your mode."/>
+
+
+    <com.zarinpal.libs.cardviwepager.CardViewPager
+        android:id="@+id/card_viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_centerInParent="true"
+        app:indicatorSize="5dp"
+        app:selectIndicatorColor="@color/colorAccent"
+        app:unSelectIndicatorColor="@color/grey_80"
+        app:visibleBottomPadding="5dp"
+        app:visibleIndicator="false"
+        app:visibleLeftPadding="30dp"
+        app:visibleRightPadding="30dp"
+        app:visibleTopPadding="5dp"
+        />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/card_viewpager"
+                android:layout_centerHorizontal="true"
+                android:text="What's your mood now?"
+                android:onClick="createJournal"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:layout_marginTop="32dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:paddingEnd="16dp"
+                android:paddingStart="16dp"
+                android:background="@drawable/round_button"
+                />
+
+
+        </RelativeLayout>
+        <android.support.design.widget.NavigationView
+            android:id="@+id/navigation_viw"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            app:headerLayout="@layout/nav_header_main"
+            app:menu="@menu/nav_menu" />
+    </android.support.v4.widget.DrawerLayout>
+</LinearLayout>
